@@ -1,0 +1,74 @@
+abstract class Forma {
+   
+    private String color;
+
+
+    public Forma(String color) {
+        this.color = color;
+    }
+
+
+    public abstract double calcularArea();
+
+
+    public String getColor() {
+        return color;
+    }
+
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+}
+
+
+class Circulo extends Forma {
+    private double radio;
+
+    
+    public Circulo(double radio, String color) {
+        super(color);
+        this.radio = radio;
+    }
+
+ 
+    @Override
+    public double calcularArea() {
+        return Math.PI * radio * radio;
+    }
+}
+
+
+class Cuadrado extends Forma {
+    private double lado;
+
+
+    public Cuadrado(double lado, String color) {
+        super(color);
+        this.lado = lado;
+    }
+
+
+    @Override
+    public double calcularArea() {
+        return lado * lado;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Circulo circulo = new Circulo(5.0, "Rojo");
+        Cuadrado cuadrado = new Cuadrado(4.0, "Azul");
+
+
+        circulo.setColor("Verde");
+        System.out.println("Color del círculo: " + circulo.getColor());
+
+        Forma forma1 = circulo;
+        Forma forma2 = cuadrado;
+
+        System.out.println("Área del círculo: " + forma1.calcularArea());
+        System.out.println("Área del cuadrado: " + forma2.calcularArea());
+    }
+}
