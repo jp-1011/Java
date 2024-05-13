@@ -1,74 +1,56 @@
-abstract class Forma {
-   
-    private String color;
+abstract class Animal {
+    private String nombre;
 
-
-    public Forma(String color) {
-        this.color = color;
+    // Constructor de la clase Animal
+    public Animal(String nombre) {
+        this.nombre = nombre;
     }
 
+    // Método abstracto que será implementado por las clases hijas
+    public abstract void hacerSonido();
 
-    public abstract double calcularArea();
-
-
-    public String getColor() {
-        return color;
-    }
-
-
-    public void setColor(String color) {
-        this.color = color;
+    // Método getter para obtener el nombre del animal
+    public String getNombre() {
+        return nombre;
     }
 }
 
-
-class Circulo extends Forma {
-    private double radio;
-
-    
-    public Circulo(double radio, String color) {
-        super(color);
-        this.radio = radio;
+// Clase que hereda de Animal (herencia)
+class Perro extends Animal {
+    // Constructor de la clase Perro que llama al constructor de la clase Animal
+    public Perro(String nombre) {
+        super(nombre);
     }
 
- 
+    // Implementación del método abstracto hacerSonido
     @Override
-    public double calcularArea() {
-        return Math.PI * radio * radio;
+    public void hacerSonido() {
+        System.out.println(getNombre() + " hace guau guau");
     }
 }
 
-
-class Cuadrado extends Forma {
-    private double lado;
-
-
-    public Cuadrado(double lado, String color) {
-        super(color);
-        this.lado = lado;
+// Clase que hereda de Animal (herencia)
+class Gato extends Animal {
+    // Constructor de la clase Gato que llama al constructor de la clase Animal
+    public Gato(String nombre) {
+        super(nombre);
     }
 
-
+    // Implementación del método abstracto hacerSonido
     @Override
-    public double calcularArea() {
-        return lado * lado;
+    public void hacerSonido() {
+        System.out.println(getNombre() + " hace miau miau");
     }
 }
 
 public class Main {
     public static void main(String[] args) {
+        // Creación de objetos de las clases Perro y Gato
+        Perro miPerro = new Perro("Fido");
+        Gato miGato = new Gato("Garfield");
 
-        Circulo circulo = new Circulo(5.0, "Rojo");
-        Cuadrado cuadrado = new Cuadrado(4.0, "Azul");
-
-
-        circulo.setColor("Verde");
-        System.out.println("Color del círculo: " + circulo.getColor());
-
-        Forma forma1 = circulo;
-        Forma forma2 = cuadrado;
-
-        System.out.println("Área del círculo: " + forma1.calcularArea());
-        System.out.println("Área del cuadrado: " + forma2.calcularArea());
+        // Llamada a los métodos hacerSonido de cada objeto (polimorfismo)
+        miPerro.hacerSonido();
+        miGato.hacerSonido();
     }
 }
