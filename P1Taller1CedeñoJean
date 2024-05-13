@@ -46,7 +46,7 @@ class Gato extends Animal {
 public class Main {
     public static void main(String[] args) {
         // Creación de objetos de las clases Perro y Gato
-        Perro miPerro = new Perro("Fido");
+        Perro miPerro = new Perro("Pikachu");
         Gato miGato = new Gato("Garfield");
 
         // Llamada a los métodos hacerSonido de cada objeto (polimorfismo)
