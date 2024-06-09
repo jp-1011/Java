@@ -1,0 +1,10 @@
+{
+  "nombre": "Jean",
+  "apellido": "Cedeño",
+  "dni": "2300005002",
+  "fecha_nacimiento": "12 de enero del 2004",
+  "especialidad": "Informatico",
+  "horas_trabajo": 45,
+  "precio_hora": 14.0,
+  "salario": 630.0
+}

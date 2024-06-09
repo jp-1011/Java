@@ -1,0 +1,10 @@
+{
+  "nombre": "Jean",
+  "apellido": "Cedeño",
+  "dni": "2300005002",
+  "fecha_nacimiento": "21 de enero del 2005",
+  "carrera": "ITIN",
+  "nota1": 8.0,
+  "nota2": 7.0,
+  "promedio": 7.5
+}
